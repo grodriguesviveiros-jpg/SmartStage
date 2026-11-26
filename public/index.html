@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080d18">
+  <title>Smart Fountain Control</title>
+  <link rel="stylesheet" href="/styles.css?v=2">
+  <script src="/app.js?v=2" defer></script>
+</head>
+<body>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <section id="loginScreen" class="login-screen">
+    <div class="login-card">
+      <a class="brand brand-login" href="/" aria-label="Smart Fountain Control">
+        <span class="brand-mark">SF</span>
+        <span><strong>SMART FOUNTAIN</strong><small>CONTROL CENTER</small></span>
+      </a>
+      <div class="login-copy">
+        <span class="eyebrow">PAINEL ADMINISTRATIVO</span>
+        <h1>Controle o palco.<br><span>Ao vivo.</span></h1>
+        <p>Entre para gerenciar eventos, música e avisos do seu jogo.</p>
+      </div>
+      <form id="loginForm" class="form-stack">
+        <label>Usuário administrador<input name="username" autocomplete="username" required></label>
+        <label>Senha<input name="password" type="password" autocomplete="current-password" required></label>
+        <button class="button button-primary button-wide" type="submit">Entrar no painel <span aria-hidden="true">→</span></button>
+        <p id="loginError" class="form-error" role="alert"></p>
+      </form>
+      <p class="login-foot"><span class="secure-dot"></span> Acesso protegido · Smart Fountain Stage</p>
+    </div>
+    <div class="login-art" aria-hidden="true">
+      <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+      <div class="art-center"><span>SF</span></div>
+      <div class="art-caption"><span class="live-pulse"></span> LIVE OPERATIONS <small>ROBLOX EXPERIENCE</small></div>
+    </div>
+  </section>
+
+  <div id="appShell" class="app-shell" hidden>
+    <aside class="sidebar">
+      <a class="brand" href="#" data-nav="dashboard">
+        <span class="brand-mark">SF</span>
+        <span><strong>SMART FOUNTAIN</strong><small>CONTROL CENTER</small></span>
+      </a>
+      <div class="nav-label">WORKSPACE</div>
+      <nav class="side-nav" aria-label="Menu principal">
+        <button class="nav-item active" data-nav="dashboard"><span class="nav-icon">⌂</span> Visão geral</button>
+        <button class="nav-item" data-nav="events"><span class="nav-icon">▤</span> Eventos <span id="eventNavCount" class="nav-count">0</span></button>
+        <button class="nav-item" data-nav="music"><span class="nav-icon">♫</span> Música</button>
+        <button class="nav-item" data-nav="announcements"><span class="nav-icon">◉</span> Avisos</button>
+        <button class="nav-item" data-nav="settings"><span class="nav-icon">⚙</span> Configurações</button>
+        <button class="nav-item" data-nav="history"><span class="nav-icon">↺</span> Histórico</button>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="experience-card">
+          <div class="experience-icon">S</div>
+          <div><strong>Smart Fountain Stage</strong><small>Experiência Roblox</small></div>
+          <span class="status-dot"></span>
+        </div>
+        <button id="logoutButton" class="logout-button"><span class="nav-icon">↪</span> Sair do painel</button>
+        <div class="sidebar-version">SMART FOUNTAIN CONTROL <span>v1.0</span></div>
+      </div>
+    </aside>
+
+    <main class="main-area">
+      <header class="topbar">
+        <div class="breadcrumb"><span>Smart Fountain</span><span class="crumb-separator">/</span><strong id="pageCrumb">Visão geral</strong></div>
+        <div class="topbar-right">
+          <div class="connection-badge"><span id="connectionDot" class="status-dot status-offline"></span><span id="connectionLabel">Verificando integração</span></div>
+          <div class="topbar-divider"></div>
+          <div class="admin-profile"><span class="avatar">A</span><span><strong id="adminName">Admin</strong><small>Administrador</small></span></div>
+        </div>
+      </header>
+      <section id="pageContent" class="page-content" tabindex="-1"></section>
+      <footer class="main-footer"><span>SMART FOUNTAIN STAGE</span><span>Configurações sincronizadas pela Roblox Open Cloud</span></footer>
+    </main>
+  </div>
+</body>
+</html>
